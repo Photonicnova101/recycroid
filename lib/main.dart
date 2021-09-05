@@ -27,8 +27,44 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Container(
+          color: Theme.of(context).accentColor,
+          child: Text(
+            "RECYCROID",
+            // style: ,
+          ),
+        ),
+        Container(
+          child: Image(
+            image: AssetImage("images/recycle.png"),
+          ),
+        ),
+        Container(
+          child: Text("RECYCROID AIMS TO HELP USERS RECYCLE"),),
+        Container(
+            child: TextButton(
+          child: Text("Start Recycling", style: TextStyle(fontFamily:'PTSans-Bold.ttf'),),
+          onPressed: () {
+            Navigator.of(context).push(
+              // With MaterialPageRoute, you can pass data between pages,
+              // but if you have a more complex app, you will quickly get lost.
+              MaterialPageRoute(
+                builder: (context) => Hearth(),
+              ),
+            );
+          },
+        )),
+      ],
+    );
+  }
+}
 
-class HomePage extends StatelessWidget{
+class Hearth extends StatelessWidget{
     @override
     Widget build(BuildContext context) {
         return Scaffold(
