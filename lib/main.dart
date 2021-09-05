@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+
 import 'package:recycroid/hearth.dart';
 
 void main() {
@@ -8,25 +10,33 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Recycroid', home: head());
+    return MaterialApp(
+        title: 'Recycroid',
+        home: head());
   }
 }
-
 class head extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Container(child: Text("RECYCROID")),
+        Container(
+          color: Theme.of(context).accentColor,
+          child: Text(
+            "RECYCROID",
+            // style: ,
+          ),
+        ),
         Container(
           child: Image(
             image: AssetImage("images/recycle.png"),
           ),
         ),
-        Container(child: Text("RECYCROID AIMS TO FUCK USERS")),
+        Container(
+          child: Text("RECYCROID AIMS TO HELP USERS RECYCLE"),),
         Container(
             child: TextButton(
-          child: Text("Start Recycling"),
+          child: Text("Start Recycling", style: TextStyle(fontFamily:'PTSans-Bold.ttf'),),
           onPressed: () {
             Navigator.of(context).push(
               // With MaterialPageRoute, you can pass data between pages,
@@ -41,12 +51,3 @@ class head extends StatelessWidget {
     );
   }
 }
-
-//  Scaffold(
-//         appBar:(AppBar(
-//           title: Text("Recycroid"),
-
-//         ),
-//          body: Image(image:AssetImage("images/recycle.png"),),),
-//       ),
-//     ),
