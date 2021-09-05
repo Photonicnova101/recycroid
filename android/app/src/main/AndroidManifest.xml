@@ -3,6 +3,8 @@
    <application
         android:label="recycroid"
         android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyBucPNdYkZ61frjWuc9N_rHMdVDm6afZpw"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
